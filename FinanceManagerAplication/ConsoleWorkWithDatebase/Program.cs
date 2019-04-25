@@ -17,8 +17,8 @@ namespace ConsoleWorkWithDatebase
             string[] CategoryName = { "Category1", "Category1", "Category3" }; 
             using (SqlConnection cnn = itm.Connetion(connetionString))
             {
-                itm.FinanceManagerDateBase(cnn, "FinanceManagerDateBase1");
-                itm.FillTableCategoryRandom(cnn, "FinanceManagerDateBase1", CategoryName);
+                itm.FinanceManagerDateBase(cnn, "FinanceManagerDateBase14");
+                itm.FillTableCategoryRandom(cnn, "FinanceManagerDateBase14", CategoryName);
 
             }
         }
