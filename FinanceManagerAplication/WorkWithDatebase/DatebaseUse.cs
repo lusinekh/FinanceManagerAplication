@@ -76,7 +76,7 @@ namespace WorkWithDatebase
                                 [CategoryId]  UNIQUEIDENTIFIER NOT NULL,
                                 [Amount]  MONEY     NOT NULL,
                                 [Comment]  NVARCHAR (MAX)   NULL,
-                                [Day]     DATETIME2 (7)    NOT NULL,
+                                [Day1]     DATETIME2 (7)    NOT NULL,
                                 [DateCreated] DATETIME2 (7)  
                                 CONSTRAINT [DF_Wallet_DateCreated] 
                                 DEFAULT (getutcdate()) NOT NULL,
@@ -127,6 +127,85 @@ namespace WorkWithDatebase
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }      
+        public string[] GateCategoryIdArray(SqlConnection CnnShow,string DateBaseName)
+        {
+            StringBuilder itms = new StringBuilder();
+
+            string query = $@" USE[{DateBaseName}] 
+                                  select Id
+                                  from Category
+                              ";
+            SqlCommand commandShow = new SqlCommand(query, CnnShow);
+            try
+            {
+                SqlDataReader reader = commandShow.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string itm = reader["Id"].ToString();
+                        itms.Append(itm);
+                    }
+                }
+                reader.Close();
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+
+            return itms.ToString().Split(' ').ToArray();
+        }
+
+        public void FillTableWalletRandom(SqlConnection CnnAdd, string DateBaseName)
+        {
+            decimal amount = rand.Next(1000, 100000000);
+            int year = rand.Next(1999, 2019);
+            int month = rand.Next(1, 12);
+            int day = rand.Next(1, 28);
+            string dayfinish = $"{year}-{month}-{day}";
+            string datecreated = $"{DateTime.Now}";
+
+            var CategoryIdArray = GateCategoryIdArray(CnnAdd, DateBaseName);
+
+            string query = $@" USE[{DateBaseName}] 
+                              INSERT INTO Wallet (Id, CategoryId, Amount,Day1,DateCreated)
+                                                  VALUES (newid(), 
+                                                 '{ CategoryIdArray[rand.Next(CategoryIdArray.Length)]}' ,
+                                                  {amount},'{dayfinish}' ,'{datecreated}');";
+            SqlCommand cmd = new SqlCommand(query, CnnAdd);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public void FillTableWallet(SqlConnection CnnAdd, string DateBaseName,int number)
+        {
+            try
+            {
+
+                for(int i=0;i<number;i++)
+                {
+
+                    FillTableWalletRandom(CnnAdd, DateBaseName);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+
             }
         }
         public void Dispose()
