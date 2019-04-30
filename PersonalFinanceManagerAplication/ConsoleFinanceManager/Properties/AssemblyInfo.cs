@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConsoleWorkWithDatebase")]
+[assembly: AssemblyTitle("ConsoleFinanceManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ConsoleWorkWithDatebase")]
+[assembly: AssemblyProduct("ConsoleFinanceManager")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8bca2da3-de11-4c43-9f58-21e057e74f1e")]
+[assembly: Guid("0266ef3d-249f-43ed-92c8-a04901992534")]
 
 // Version information for an assembly consists of the following four values:
 //
