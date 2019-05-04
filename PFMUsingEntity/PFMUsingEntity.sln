@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManagerAplication", "FinanceManagerAplication\FinanceManagerAplication.csproj", "{7183F8A8-0F7C-4618-9F43-75E514D11CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFinanceManager", "ConsoleFinanceManager\ConsoleFinanceManager.csproj", "{32BA05D7-5A2F-4EF8-99E3-934904A44468}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7183F8A8-0F7C-4618-9F43-75E514D11CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7183F8A8-0F7C-4618-9F43-75E514D11CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7183F8A8-0F7C-4618-9F43-75E514D11CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7183F8A8-0F7C-4618-9F43-75E514D11CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BA05D7-5A2F-4EF8-99E3-934904A44468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BA05D7-5A2F-4EF8-99E3-934904A44468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BA05D7-5A2F-4EF8-99E3-934904A44468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BA05D7-5A2F-4EF8-99E3-934904A44468}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F449FFE-BA2E-4C77-AE56-992DBB0F9B61}
+	EndGlobalSection
+EndGlobal
